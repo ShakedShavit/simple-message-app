@@ -4,7 +4,7 @@ require('./db/mongoose');
 
 const Message = require('./models/message');
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 
 const app = express(); //creates express object
 
