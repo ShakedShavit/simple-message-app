@@ -16,7 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    console.log('api working. ', 'url: ' + req.protocol + '://' + req.get('host') + req.originalUrl);
+});
+
 app.get('/message/get-all', async (req, res) => {
+    console.log('inside get all messages route');
     try {
         const messages = await Message.find();
 
