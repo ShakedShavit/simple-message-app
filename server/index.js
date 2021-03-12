@@ -20,6 +20,11 @@ app.use(cors());
 //     console.log('api working. ', 'url: ' + req.protocol + '://' + req.get('host') + req.originalUrl);
 // });
 
+app.get('/', (req, res) => {
+    res.send('ok');
+    console.log('api working. ', 'url: ' + req.protocol + '://' + req.get('host') + req.originalUrl);
+})
+
 app.get('/message/get-all', async (req, res) => {
     console.log('inside get all messages route');
     try {
@@ -58,12 +63,6 @@ app.post('/message/post', async (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.send('ok');
-    console.log('api working. ', 'url: ' + req.protocol + '://' + req.get('host') + req.originalUrl);
-})
-
 app.listen(port, () => { //starting the server with the port. i think it means listenning to requests to the server
    console.log('server connected, port:', port);
-   console.log('api working. ', 'url: ' + req.protocol + '://' + req.get('host') + req.originalUrl);
 });
